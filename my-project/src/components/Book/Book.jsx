@@ -8,8 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const Book = () => {
 
-  const userLanguage = navigator.language || navigator.userLanguage;
-  console.log('Current language:', userLanguage);
+
 
   const { t } = useTranslation();
   const [openForm, setOpenForm] = useState(false);
