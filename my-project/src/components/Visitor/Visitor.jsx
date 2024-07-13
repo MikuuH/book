@@ -1,11 +1,11 @@
 import { useState, useCallback, useRef } from 'react';
-import { useTranslation } from "react-i18next";
-import FormAddBook from './FormAddBook';
+import FormAddVisitor from './FormAddVisitor';
 import Button from "@mui/material/Button";
+import { useTranslation } from "react-i18next";
 import DenseTable from "../DenseTable/DenseTable";
 import BoxSystemProps from "../Body/Body";
 import styled from 'styled-components';
-
+import BarErrorDeleteData from '../BarErrorDeleteData/BarErrorDeleteData';
 const FooterButtonsContainer = styled.div`
   position: fixed;
   bottom: 0;
@@ -17,19 +17,16 @@ const FooterButtonsContainer = styled.div`
   z-index: 999;
 `;
 
-const Book = () => {
+const Visitor = () => {
   const tableRef = useRef(null);
   const { t } = useTranslation();
   const [openForm, setOpenForm] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const columns = [
     { field: 'id', headerName: t('id'), width: 70 },
-    { field: 'Title', headerName: t('title'), width: 130 },
-    { field: 'author', headerName: t('author'), width: 130 },
-    { field: 'year', headerName: t('year'), width: 100 },
-    { field: 'names', headerName: t('names'), width: 130 },
-    { field: 'pages', headerName: t('pages'), width: 100 },
-    { field: 'amout', headerName: t('amout'), width: 130 },
+    { field: 'FIO', headerName: t('FIO'), width: 130 },
+    { field: 'number', headerName: t('number'), width: 130 },
   ];
 
   const handleOpenForm = useCallback(() => {
@@ -42,16 +39,23 @@ const Book = () => {
 
   const handleDeleteSelected = useCallback(() => {
     if (tableRef.current) {
-      tableRef.current.deleteSelected();
+      const selectedItems = tableRef.current.deleteSelected();
+      if (selectedItems.length === 0) {
+        setSnackbarOpen(true);
+      }
     }
   }, []);
 
-  const handleAddBook = useCallback((data) => {
+  const handleAddVisitor = useCallback((data) => {
     if (tableRef.current) {
       tableRef.current.addRow(data);
     }
     handleCloseForm();
   }, [handleCloseForm]);
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
   return (
     <BoxSystemProps>
@@ -63,7 +67,7 @@ const Book = () => {
       <DenseTable
         ref={tableRef}
         columns={columns}
-        localStorageKey="book"
+        localStorageKey="visitor"
       />
 
       <FooterButtonsContainer>
@@ -75,9 +79,12 @@ const Book = () => {
         </Button>
       </FooterButtonsContainer>
 
-      <FormAddBook open={openForm} onClose={handleCloseForm} onAddBook={handleAddBook} />
+      <BarErrorDeleteData open={snackbarOpen} onClose={handleSnackbarClose} className="flex justify-center items-center top-100" />
+
+      <FormAddVisitor open={openForm} onClose={handleCloseForm} onAddVisitor={handleAddVisitor} />
     </BoxSystemProps>
   );
 };
 
-export default Book;
+export default Visitor;
+

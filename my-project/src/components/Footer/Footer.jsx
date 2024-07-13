@@ -5,10 +5,12 @@ export default function Footer() {
       <footer className="fixed bottom-0 inset-x-0 bg-gray-100">
         <AppBar position="static">
           <Toolbar className="flex items-center justify-center">
-            <p>конец сайта</p>
           </Toolbar>
         </AppBar>
       </footer>
   );
 }
+
+
+
 

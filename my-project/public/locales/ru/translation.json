@@ -1,4 +1,27 @@
 {
     "add-button": "Добавить",
-    "del-button": "Удалить"
+    "del-button": "Удалить",
+    "title": "Название",
+    "author": "Имя автора",
+    "year": "Год издательства",
+    "names": "Название издательства",
+    "pages": "Страниц",
+    "amout": "кол-во",
+    "FIO": "ФИО",
+    "number": "номер",
+    "nothingToDelete": "Нечего удалять",
+    "nothingRows" : "Нет данных",
+    "id": "айди",
+    "addBook": "Добавление книги",
+    "book": "книги",
+    "visitor": "посетитель",
+    "cards": "карта",
+    "stats": "статистика",
+    "newDataAdded": "новые данные были добавлены успешно",
+    "returnDate": "дата разврата",
+    "IssueDate": "Дата начала",
+    "nameVisitor": "Имя клиента",
+    "NoneNameVisitor": "Нет клиента",
+    "nameBook": "Имя книги",
+    "NoneNameBook": "Нет книги"
 }

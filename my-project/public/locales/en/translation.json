@@ -1,5 +1,27 @@
 {
-    "add-button": "Add",
-    "del-button": "Delete"
-  }
-  
+  "add-button": "Add",
+  "del-button": "Delete",
+  "title": "Title",
+  "author": "Author's Name",
+  "year": "Year of Publication",
+  "names": "Publisher's Name",
+  "pages": "Pages",
+  "amout": "Amount",
+  "FIO": "Full Name",
+  "number": "Number",
+  "nothingToDelete": "Nothing to delete",
+  "nothingRows": "No data",
+  "id": "ID",
+  "addBook": "Add Book",
+  "book": "Books",
+  "visitor": "Visitor",
+  "cards": "Card",
+  "stats": "Statistics",
+  "newDataAdded": "New data was successfully added",
+  "returnDate": "Return Date",
+  "IssueDate": "Start Date",
+  "nameVisitor": "Visitor's Name",
+  "NoneNameVisitor": "No Visitor",
+  "nameBook": "Book Name",
+  "NoneNameBook": "No Book"
+}

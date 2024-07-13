@@ -1,10 +1,9 @@
-import {Box} from "@mui/material";
-
+import { Box } from "@mui/material";
 import PropTypes from 'prop-types';
 import { useTheme } from "@mui/material";
 
 const BoxSystemProps = ({ children }) => {
-  const theme = useTheme(); // Получаем тему
+  const theme = useTheme();
 
   return (
       <Box
@@ -17,9 +16,11 @@ const BoxSystemProps = ({ children }) => {
           backgroundColor: theme.palette.background.default, // Используем цвет фона из темы
           display: "flex",
           flexDirection: "column",
+          height: 'calc(100vh - 100px)',
+          overflow: 'auto',
         }}
       >
-        {children} {/* Рендерим дочерние элементы здесь */}
+        {children}
       </Box>
   );
 };
@@ -28,7 +29,7 @@ BoxSystemProps.propTypes = {
   children: PropTypes.node,
 };
 
-export default function ThemeBoxSysrem({children}) {
+export default function ThemeBoxSysrem({ children }) {
     return (
       <>
         <BoxSystemProps>{children}</BoxSystemProps>
@@ -39,5 +40,3 @@ export default function ThemeBoxSysrem({children}) {
 ThemeBoxSysrem.propTypes = {
   children: PropTypes.node,
 };
-
-
