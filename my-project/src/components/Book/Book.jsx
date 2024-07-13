@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import DenseTable from "../DenseTable/DenseTable";
 import BoxSystemProps from "../Body/Body";
 import styled from 'styled-components';
+import DeleteIcon from '@mui/icons-material/Delete';
+import AddIcon from '@mui/icons-material/Add';
 
 const FooterButtonsContainer = styled.div`
   position: fixed;
@@ -67,11 +69,23 @@ const Book = () => {
       />
 
       <FooterButtonsContainer>
-        <Button variant="contained" size="large" onClick={handleDeleteSelected}>
-          {t('del-button')}
+        <Button
+          size="large"
+          onClick={handleDeleteSelected}
+          variant="contained"
+          color="secondary"
+          startIcon={<DeleteIcon />}
+        >
+        {t('del-button')}
         </Button>
-        <Button variant="contained" size="large" onClick={handleOpenForm}>
-          {t('add-button')}
+        <Button
+          size="large"
+          onClick={handleOpenForm}
+          variant="contained"
+          color="secondary"
+          startIcon={<AddIcon />}
+        >
+        {t('add-button')}
         </Button>
       </FooterButtonsContainer>
 

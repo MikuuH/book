@@ -5,7 +5,6 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import translationEN from '../public/locales/en/translation.json';
 import translationRU from '../public/locales/ru/translation.json';
 
-// the translations
 const resources = {
   en: {
     translation: translationEN
@@ -17,15 +16,15 @@ const resources = {
 
 i18n
   .use(LanguageDetector)
-  .use(initReactI18next) // passes i18n down to react-i18next
+  .use(initReactI18next)
   .init({
     resources,
     fallbackLng: 'en',
 
-    keySeparator: false, // we do not use keys in form messages.welcome
+    keySeparator: false,
 
     interpolation: {
-      escapeValue: false // react already safes from xss
+      escapeValue: false
     }
   });
 

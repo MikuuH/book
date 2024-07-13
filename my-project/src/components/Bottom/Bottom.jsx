@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 const HomeButtonContainer = styled.div`
   position: fixed;
   bottom: 0px;
-  left: 50%;
+  left: 49%;
   transform: translateX(-50%);
   z-index: 1000;
 `;
@@ -58,7 +58,7 @@ const Bottom = () => {
         }}
       >
         <HomeButtonContainer>
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+        <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" size='large' />
         </HomeButtonContainer>
 
         <BottomNavigationAction label={t('book')}icon={<BookIcon />} component={Link} to="/book" />

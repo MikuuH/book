@@ -7,7 +7,6 @@ import BoxSystemProps from "../Body/Body";
 import styled from 'styled-components';
 import BarErrorDeleteData from '../BarErrorDeleteData/BarErrorDeleteData';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { makeStyles } from '@material-ui/core/styles';
 import AddIcon from '@mui/icons-material/Add';
 
 const FooterButtonsContainer = styled.div`
